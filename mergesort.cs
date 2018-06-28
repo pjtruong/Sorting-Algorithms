@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace quicksort
+namespace mergesort
 {
     class Program
     {
@@ -14,42 +14,6 @@ namespace quicksort
         }
 
 
-        public static void QuickSort(int[] arr, int low, int high)
-        {
-            if(low < high)
-            {
-                int pivot = partition(arr, low, high);
-                QuickSort(arr, low, pivot - 1);
-                QuickSort(arr, pivot + 1, high);
-            }
-            
-
-        }
-
-        public static int partition(int[] arr, int low, int high)
-        {
-
-            int pivot = arr[high];
-            //index of smaller element 
-            int i = low - 1;
-            for(int j = low; j < high; j++)
-            {
-                if(arr[j] <= pivot)
-                {
-                    i++;
-                    int temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
-                }
-
-            }
-
-            int temp2 = arr[i + 1];
-            arr[i + 1] = arr[high];
-            arr[high] = temp2;
-
-            return i + 1;
-        }
 
         public static void MergeSort(int[] arr, int low, int high)
         {
